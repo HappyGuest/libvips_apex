@@ -34,7 +34,7 @@ RUN \
   apt-get autoclean && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+  
+CMD [ "/bin/bash" ]
 RUN curl https://raw.githubusercontent.com/apex/apex/master/install.sh | sh
 RUN apex upgrade
-CMD [ "/bin/bash" ]
