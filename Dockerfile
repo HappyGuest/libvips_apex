@@ -18,7 +18,7 @@ RUN \
   # Build libvips
   cd /tmp && \
   curl -L -O https://github.com/jcupitt/libvips/archive/v$LIBVIPS_VERSION.tar.gz && \
-  tar zxvf libvips-$LIBVIPS_VERSION.tar.gz
+  tar zxvf v$LIBVIPS_VERSION.tar.gz
 
 RUN \
   cd /tmp/libvips-$LIBVIPS_VERSION && \
