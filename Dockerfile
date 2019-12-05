@@ -17,11 +17,11 @@ ENV LIBVIPS_VERSION $LIBVIPS_VERSION_MAJOR.$LIBVIPS_VERSION_MINOR.$LIBVIPS_VERSI
 RUN \
   # Build libvips
   cd /tmp && \
-  curl -L -O https://github.com/jcupitt/libvips/releases/download/v$LIBVIPS_VERSION/vips-$LIBVIPS_VERSION.tar.gz && \
-  tar zxvf vips-$LIBVIPS_VERSION.tar.gz
+  curl -L -O https://github.com/jcupitt/libvips/archive/v$LIBVIPS_VERSION.tar.gz && \
+  tar zxvf v$LIBVIPS_VERSION.tar.gz
 
 RUN \
-  cd /tmp/vips-$LIBVIPS_VERSION && \
+  cd /tmp/v$LIBVIPS_VERSION && \
   ./configure --enable-debug=no --without-python $1 && \
   make && \
   make install && \
