@@ -18,10 +18,10 @@ RUN \
   # Build libvips
   cd /tmp && \
   curl -L -O https://github.com/jcupitt/libvips/archive/v$LIBVIPS_VERSION.tar.gz && \
-  tar zxvf v$LIBVIPS_VERSION.tar.gz
+  tar zxvf libvips-$LIBVIPS_VERSION.tar.gz
 
 RUN \
-  cd /tmp/v$LIBVIPS_VERSION && \
+  cd /tmp/libvips-$LIBVIPS_VERSION && \
   ./configure --enable-debug=no --without-python $1 && \
   make && \
   make install && \
