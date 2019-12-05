@@ -34,8 +34,12 @@ RUN \
   apt-get autoclean && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN cd / 
-RUN curl https://raw.githubusercontent.com/apex/apex/master/install.sh | sh
-RUN apex upgrade
+  
+RUN \
+  # Build libvips
+  cd /tmp && \
+  curl https://raw.githubusercontent.com/apex/apex/master/install.sh | sh && \
+  apex upgrade
+
 
 CMD [ "/bin/bash" ]
