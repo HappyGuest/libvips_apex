@@ -22,7 +22,7 @@ RUN \
 
 RUN \
   cd /tmp/libvips-$LIBVIPS_VERSION && \
-  ./configure --enable-debug=no --without-python $1 && \
+  ./autogen.sh && \
   make && \
   make install && \
   ldconfig
