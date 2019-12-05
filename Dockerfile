@@ -1,4 +1,4 @@
-FROM node:8.10
+FROM node:10.9-stretch
 
 RUN apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y \
